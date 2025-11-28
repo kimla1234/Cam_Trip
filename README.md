@@ -15,8 +15,8 @@ _(Replace the URL with your actual GitHub Pages link.)_
 
 ## 🖼 Screenshots
 
-**Desktop:** `./image/Desktop.png`  
-**Mobile:** `./image/mobile.png`
+**Desktop:** `./screenshots/Desktop.png`  
+**Mobile:** `./screenshots/mobile.png`
 
 > Place screenshots in the `screenshots/` folder with these filenames, or update the paths below.
 
