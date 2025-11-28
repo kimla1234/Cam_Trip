@@ -16,7 +16,7 @@ _(Replace the URL with your actual GitHub Pages link.)_
 ## 🖼 Screenshots
 
 ![Project Management Interface](./image/Desktop.png)
-![Project Manager App on Smartphone](./image/mobile.png)
+![Project Manager App on Smartphone](./image/Mobile.png)
 
 > Place screenshots in the `image/` folder with these filenames, or update the paths below.
 
