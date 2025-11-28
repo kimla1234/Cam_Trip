@@ -6,6 +6,8 @@
 
 ## 🔗 Live Demo
 
+**Hosting vercel:** https://camtrip-project.vercel.app
+
 **GitHub Pages:** https://github.com/kimla1234/Cam_Trip  
 _(Replace the URL with your actual GitHub Pages link.)_
 
@@ -60,32 +62,6 @@ npm run dev       # or `npm start` / `npm run develop` depending on your setup
 npm run build
 npm run preview   # optional — preview the production build
 ```
-
----
-
-## 📸 Credits (Images / Fonts)
-
-- Images: Unsplash / Pexels / Freepik — replace with exact image credits you used.
-- Fonts: Kontumruy Pro (local `fonts/` folder) — credit the font author and license.
-
----
-
-## ✅ Checklist (required for grading)
-
-- [x] Project title + full name
-- [x] Live demo link (GitHub Pages) — **replace placeholder**
-- [x] Screenshots (desktop + mobile) — add images to `image/`
-- [x] List of implemented features
-- [x] Credits for images/fonts
-- [x] How to run the project locally
-
-> Missing any of these will reduce your grade — make sure to replace all placeholders.
-
----
-
-## 📄 License
-
-This project is for educational purposes.
 
 ---
 
