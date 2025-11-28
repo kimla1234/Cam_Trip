@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>CamTrip</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div id="main-navbar" class="bg-white sticky top-0 z-50 transition-colors duration-300">
+        <header>
+            <nav>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="relative flex items-center justify-between h-16">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="#top-of-page" id="home-link"
+                                class="text-xl font-bold text-blue-700 cursor-pointer">CamTrip</a>
+                        </div>
+
+                        <div class="hidden sm:block sm:ml-6">
+                            <ul class="flex space-x-4 text-gray-700 font-medium items-center">
+                                <li><a href="#home"
+                                        class="nav-link hover:text-blue-600 px-3 py-2 rounded-md text-sm">Home</a></li>
+                                <li><a href="#trip"
+                                        class="nav-link hover:text-blue-600 px-3 py-2 rounded-md text-sm">Trip</a>
+                                </li>
+                                <li><a href="#pricing_plans"
+                                        class="nav-link hover:text-blue-600 px-3 py-2 rounded-md text-sm">Pricing
+                                        Plans</a>
+                                </li>
+                                <li><a href="#Testimonials"
+                                        class="nav-link hover:text-blue-600 px-3 py-2 rounded-md text-sm">Testimonials</a>
+                                </li>
+                                <li class="relative group">
+                                    <button class="hover:text-blue-600 px-3 py-2 rounded-md text-sm flex items-center">
+                                        More Info
+                                        <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+
+                                    <ul
+                                        class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
+                                        <li><a href="#partners"
+                                                class="nav-link block px-4 py-2 hover:bg-blue-50 hover:text-blue-600">About
+                                                me</a></li>
+                                        <li><a href="#guidelines"
+                                                class="nav-link block px-4 py-2 hover:bg-blue-50 hover:text-blue-600">Contect</a>
+                                        </li>
+                                        <li><a href="#faqs"
+                                                class="nav-link block px-4 py-2 hover:bg-blue-50 hover:text-blue-600">FAQs</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <a href="#signup" id="cta-button" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium 
+                                   hover:bg-blue-700 
+                                   active:bg-blue-800 
+                                   focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 
+                                   transition duration-150">
+                                Sign up
+                            </a>
+
+                            <div class="sm:hidden">
+                                <button id="mobile-menu-button" type="button"
+                                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                                    <span class="sr-only">Open main menu</span>
+                                    <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                    <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sm:hidden hidden" id="mobile-menu">
+                    <div class="px-2 pt-2 pb-3 space-y-1">
+                        <a href="#home"
+                            class="nav-link mobile-link block px-3 py-2 text-gray-900 rounded-md hover:bg-gray-100 text-base font-medium">Home</a>
+                        <a href="#trip"
+                            class="nav-link mobile-link block px-3 py-2 text-gray-900 rounded-md hover:bg-gray-100 text-base font-medium">Trip</a>
+                        <a href="#pricing_plans"
+                            class="nav-link mobile-link block px-3 py-2 text-gray-900 rounded-md hover:bg-gray-100 text-base font-medium">Pricing
+                            Plans</a>
+                        <a href="#Testimonials"
+                            class="nav-link mobile-link block px-3 py-2 text-gray-900 rounded-md hover:bg-gray-100 text-base font-medium">Testimonials
+                        </a>
+                        <div class="relative">
+                            <button id="mobile-dropdown-trigger"
+                                class="w-full text-left px-3 py-2 text-gray-900 rounded-md hover:bg-gray-100 text-base font-medium flex items-center justify-between">
+                                More Info
+                                <svg class="h-5 w-5 mobile-dropdown-arrow" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div class="hidden pl-4 py-2" id="mobile-dropdown-content">
+                                <a href="#partners" class="nav-link mobile-link block py-1 hover:text-blue-600">About
+                                    us</a>
+                                <a href="#guidelines"
+                                    class="nav-link mobile-link block py-1 hover:text-blue-600">Contect</a>
+                                <a href="#faqs" class="nav-link mobile-link block py-1 hover:text-blue-600">FAQs</a>
+                            </div>
+                        </div>
+
+                        <a href="#signup"
+                            class="nav-link mobile-link block px-3 py-2 text-blue-600 font-semibold rounded-md text-base font-medium hover:bg-blue-50">
+                            Sign up</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <div>
+        <!-- Hero Section -->
+        <section id="home"
+            class="relative  bg-gradient-to-br z-10 from-blue-900 to-indigo-800 text-white overflow-hidden">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="absolute inset-0 bg-cover bg-center " style="background-image: url('./image/bg.png');">
+            </div>
+
+            <div class="container mx-auto px-4 py-24 md:py-32 relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <!-- Left Side: Company Info -->
+                    <div class="w-full md:w-1/2 mb-12 md:mb-0">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                            CamTrip.<br>Tourism.Cambodia.
+                        </h1>
+                        <p class="text-xl mb-8 text-gray-300">Connecting you with local communities and genuine Khmer
+                            life.</p>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#"
+                                class="bg-white text-blue-900 font-semibold px-8 py-3 rounded-full hover:bg-blue-100 transition duration-300 text-center">Get
+                                Started</a>
+                            <a href="#"
+                                class="border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-blue-900 transition duration-300 text-center">Learn
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <section id="trip" class="container mx-auto px-4 space-y-6  py-8 md:py-12 lg:py-20">
+            <div class="mx-auto flex max-w-[58rem]  flex-col items-center space-y-4 text-center">
+                <h2 class="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-4xl">Top tourist destinations</h2>
+                <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+                    Here is a breakdown of the Cambodia's most popular destinations, focusing on the most visited cities
+                    and countries.
+                </p>
+            </div>
+
+            <div class="mx-auto grid justify-center gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-[1324px]">
+                <div
+                    class="relative overflow-hidden rounded-lg border bg-white select-none p-2 transition-all duration-300 hover:scale-105 cursor-pointer">
+                    <div class="flex h-[250px] w-[400px] flex-col justify-between rounded-md p-6">
+                        <div class="absolute inset-0 bg-cover bg-center items-end flex justify-end"
+                            style="background-image: url('./image/bg.png');">
+                            <div
+                                class="space-y-2 p-2 m-2 bg-white bg-opacity-40 backdrop-filter backdrop-blur-sm rounded-md self-end">
+                                <h3 class="font-bold -mb-2 text-lg text-white">Siem Reap</h3>
+                                <p class="text-sm text-white">Angkor was inscribed on the UNESCO World Heritage List.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative overflow-hidden rounded-lg border bg-white select-none p-2 transition-all duration-300 hover:scale-105 cursor-pointer">
+                    <div class="flex h-[250px] w-[400px] flex-col justify-between rounded-md p-6">
+                        <div class="absolute inset-0 bg-cover bg-center items-end flex justify-end"
+                            style="background-image: url('./image/kep.png');">
+                            <div
+                                class="space-y-2 p-2 m-2 bg-white bg-opacity-40 backdrop-filter backdrop-blur-sm rounded-md self-end">
+                                <h3 class="font-bold text-lg -mb-2 text-white">Siem Reap</h3>
+                                <p class="text-sm text-white">Angkor was inscribed on the UNESCO World Heritage List.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative overflow-hidden rounded-lg border bg-white select-none p-2 transition-all duration-300 hover:scale-105 cursor-pointer">
+                    <div class="flex h-[250px] w-[400px] flex-col justify-between rounded-md p-6">
+                        <div class="absolute inset-0 bg-cover bg-center items-end flex justify-end"
+                            style="background-image: url('./image/kampot.png');">
+                            <div
+                                class="space-y-2 p-2 m-2 bg-white bg-opacity-40 backdrop-filter backdrop-blur-sm rounded-md self-end">
+                                <h3 class="font-bold text-lg -mb-2 text-white">Siem Reap</h3>
+                                <p class="text-sm text-white">Angkor was inscribed on the UNESCO World Heritage List.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative overflow-hidden rounded-lg border bg-white select-none p-2 transition-all duration-300 hover:scale-105 cursor-pointer">
+                    <div class="flex h-[250px] w-[400px] flex-col justify-between rounded-md p-6">
+                        <div class="absolute inset-0 bg-cover bg-center items-end flex justify-end"
+                            style="background-image: url('./image/battambang.png');">
+                            <div
+                                class="space-y-2 p-2 m-2 bg-white bg-opacity-40 backdrop-filter backdrop-blur-sm rounded-md self-end">
+                                <h3 class="font-bold text-lg -mb-2 text-white">Siem Reap</h3>
+                                <p class="text-sm text-white">Angkor was inscribed on the UNESCO World Heritage List.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative overflow-hidden rounded-lg border bg-white select-none p-2 transition-all duration-300 hover:scale-105 cursor-pointer">
+                    <div class="flex h-[250px] w-[400px] flex-col justify-between rounded-md p-6">
+                        <div class="absolute inset-0 bg-cover bg-center items-end flex justify-end"
+                            style="background-image: url('./image/boku.png');">
+                            <div
+                                class="space-y-2 p-2 m-2 bg-white bg-opacity-40 backdrop-filter backdrop-blur-sm rounded-md self-end">
+                                <h3 class="font-bold text-lg -mb-2 text-white">Siem Reap</h3>
+                                <p class="text-sm text-white">Angkor was inscribed on the UNESCO World Heritage List.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative overflow-hidden rounded-lg border bg-white select-none p-2 transition-all duration-300 hover:scale-105 cursor-pointer">
+                    <div class="flex h-[250px] w-[400px] flex-col justify-between rounded-md p-6">
+                        <div class="absolute inset-0 bg-cover bg-center items-end flex justify-end"
+                            style="background-image: url('./image/Sihanoukville.png');">
+                            <div
+                                class="space-y-2 p-2 m-2 bg-white bg-opacity-40 backdrop-filter backdrop-blur-sm rounded-md self-end">
+                                <h3 class="font-bold text-lg -mb-2 text-white">Siem Reap</h3>
+                                <p class="text-sm text-white">Angkor was inscribed on the UNESCO World Heritage List.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exactly 3 pricing plans -->
+        <section id="pricing_plans" class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">
+                    Choose the Perfect Plan
+                </h2>
+
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+                    <div
+                        class="flex flex-col bg-white border border-gray-200 rounded-xl shadow-lg p-8 transform hover:scale-[1.02] transition duration-300">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Free</h3>
+                        <p class="text-sm text-gray-500 mb-6">Explore the basics and get started.</p>
+                        <div class="flex items-center mb-6">
+                            <span class="text-5xl font-extrabold text-gray-900">$0</span>
+                            <span class="ml-2 text-xl font-medium text-gray-500">/month</span>
+                        </div>
+                        <ul role="list" class="space-y-4 flex-grow mb-8">
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p class="text-base text-gray-600">Basic features access</p>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p class="text-base text-gray-600">Limited storage</p>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p class="text-base text-gray-600">Community support</p>
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="mt-auto block w-full bg-white border border-indigo-600 text-indigo-600 rounded-md py-3 text-center font-semibold hover:bg-indigo-50 transition duration-300">
+                            Sign up for Free
+                        </a>
+                    </div>
+
+                    <div
+                        class="flex flex-col bg-white border-2 border-indigo-600 rounded-xl shadow-2xl p-8 transform hover:scale-[1.02] transition duration-300">
+                        <p class="text-sm font-semibold text-indigo-600 mb-2 uppercase tracking-wider">Most Popular</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Premium Individual</h3>
+                        <p class="text-sm text-gray-500 mb-6">Ideal for power users and professionals.</p>
+                        <div class="flex items-center mb-6">
+                            <span class="text-5xl font-extrabold text-gray-900">$12</span>
+                            <span class="ml-2 text-xl font-medium text-gray-500">/month</span>
+                        </div>
+                        <ul role="list" class="space-y-4 flex-grow mb-8">
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p class="text-base text-gray-600">Unlimited features</p>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p class="text-base text-gray-600">1 TB cloud storage</p>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p class="text-base text-gray-600">Priority email support</p>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p class="text-base text-gray-600">Advanced analytics</p>
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="mt-auto block w-full bg-indigo-600 text-white rounded-md py-3 text-center font-semibold hover:bg-indigo-700 transition duration-300">
+                            Start 7-Day Trial
+                        </a>
+                    </div>
+
+                    <div
+                        class="flex flex-col bg-white border border-gray-200 rounded-xl shadow-lg p-8 transform hover:scale-[1.02] transition duration-300">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Family</h3>
+                        <p class="text-sm text-gray-500 mb-6">Access for up to 5 family members.</p>
+                        <div class="flex items-center mb-6">
+                            <span class="text-5xl font-extrabold text-gray-900">$25</span>
+                            <span class="ml-2 text-xl font-medium text-gray-500">/month</span>
+                        </div>
+                        <ul role="list" class="space-y-4 flex-grow mb-8">
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p class="text-base text-gray-600">Everything in Premium</p>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p class="text-base text-gray-600">Up to 5 individual profiles</p>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p class="text-base text-gray-600">Shared family vault</p>
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="mt-auto block w-full bg-white border border-gray-400 text-gray-700 rounded-md py-3 text-center font-semibold hover:bg-gray-100 transition duration-300">
+                            Get Family Plan
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="Testimonials" class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-10">
+                    What Our Customers Are Saying
+                </h2>
+
+                <div class="relative overflow-hidden rounded-xl shadow-sm h-[280px] bg-gray-100">
+
+                    <div class="absolute inset-0 w-full h-full">
+                        <div id="t-slide1" class="absolute inset-0 p-8 transition-opacity duration-700 opacity-100">
+                            <div class="flex flex-col h-full justify-between">
+                                <blockquote class="flex-grow">
+                                    <p class="text-xl text-gray-700 italic">
+                                        "The travel guides were spot-on! We saved so much time knowing exactly where to
+                                        go. The Premium plan's exclusive tips made our trip unforgettable."
+                                    </p>
+                                </blockquote>
+                                <div class="mt-6 flex items-center">
+                                    <div
+                                        class="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-200 flex items-center justify-center text-indigo-800 font-bold">
+                                        L.M.</div>
+                                    <div class="ml-4">
+                                        <div class="text-base font-semibold text-gray-900">Liam Mitchell</div>
+                                        <div class="text-sm text-indigo-600">Premium Member</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="t-slide2" class="absolute inset-0 p-8 transition-opacity duration-700 opacity-0">
+                            <div class="flex flex-col h-full justify-between">
+                                <blockquote class="flex-grow">
+                                    <p class="text-xl text-gray-700 italic">
+                                        "The platform is incredibly user-friendly. I started with the free plan and was
+                                        so impressed, I upgraded to Family for everyone. Excellent value and service."
+                                    </p>
+                                </blockquote>
+                                <div class="mt-6 flex items-center">
+                                    <div
+                                        class="flex-shrink-0 h-10 w-10 rounded-full bg-green-200 flex items-center justify-center text-green-800 font-bold">
+                                        S.C.</div>
+                                    <div class="ml-4">
+                                        <div class="text-base font-semibold text-gray-900">Sarah Chen</div>
+                                        <div class="text-sm text-green-600">Family Plan User</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="t-slide3" class="absolute inset-0 p-8 transition-opacity duration-700 opacity-0">
+                            <div class="flex flex-col h-full justify-between">
+                                <blockquote class="flex-grow">
+                                    <p class="text-xl text-gray-700 italic">
+                                        "As a student, the Free tier has everything I need to plan weekend trips. When I
+                                        start working, the Individual plan will be my first purchase!"
+                                    </p>
+                                </blockquote>
+                                <div class="mt-6 flex items-center">
+                                    <div
+                                        class="flex-shrink-0 h-10 w-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-800 font-bold">
+                                        J.R.</div>
+                                    <div class="ml-4">
+                                        <div class="text-base font-semibold text-gray-900">Jack Rodriguez</div>
+                                        <div class="text-sm text-pink-600">Free Tier User</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                        <a href="#t-slide1"
+                            class="w-3 h-3 bg-gray-900 rounded-full opacity-70 hover:opacity-100 transition duration-300"></a>
+                        <a href="#t-slide2"
+                            class="w-3 h-3 bg-gray-900 rounded-full opacity-70 hover:opacity-100 transition duration-300"></a>
+                        <a href="#t-slide3"
+                            class="w-3 h-3 bg-gray-900 rounded-full opacity-70 hover:opacity-100 transition duration-300"></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900">
+            <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+
+                <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+                    <div class="px-5 py-2">
+                        <a href="#home" class="text-base text-gray-300 hover:text-white transition duration-200">
+                            Home
+                        </a>
+                    </div>
+                    <div class="px-5 py-2">
+                        <a href="#trip" class="text-base text-gray-300 hover:text-white transition duration-200">
+                            Trip
+                        </a>
+                    </div>
+                    <div class="px-5 py-2">
+                        <a href="#Testimonials"
+                            class="text-base text-gray-300 hover:text-white transition duration-200">
+                            Testimonials
+                        </a>
+                    </div>
+                    <div class="px-5 py-2">
+                        <a href="#pricing_plans"
+                            class="text-base text-gray-300 hover:text-white transition duration-200">
+                            Pricing Plans
+                        </a>
+                    </div>
+                    <div class="px-5 py-2">
+                        <a href="#" class="text-base text-gray-300 hover:text-white transition duration-200">
+                            Contact
+                        </a>
+                    </div>
+                </nav>
+
+                <div class="mt-8 flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition duration-200">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.77l-.44 2.891h-2.33v6.987C18.343 21.128 22 16.991 22 12z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition duration-200">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M8.29 20c.56.54 1.25.96 2.01 1.24.76.28 1.55.42 2.37.42s1.61-.14 2.37-.42c.76-.28 1.45-.7 2.01-1.24l-1.04-.8c-.46.4-1.02.66-1.61.79-.59.13-1.19.2-1.8.2s-1.21-.07-1.8-.2c-.59-.13-1.15-.39-1.61-.79L8.29 20zM12 1.75c-1.19 0-2.28.27-3.26.81-.98.54-1.8 1.28-2.46 2.22l1.04.8c.55-.8 1.25-1.42 2.11-1.85.86-.43 1.83-.65 2.88-.65s2.02.22 2.88.65c.86.43 1.56 1.05 2.11 1.85l1.04-.8c-.66-.94-1.48-1.68-2.46-2.22C14.28 2.02 13.19 1.75 12 1.75zm1.25 10.75v-6h-2.5v6H12v-6h-1.25v6z" />
+                            <path
+                                d="M18.75 6.5l.75-1.5H4.5l.75 1.5h13.5zm-1.5 3l.75-1.5H5.25l.75 1.5h12zm-1.5 3l.75-1.5H6.75l.75 1.5h10.5zm-1.5 3l.75-1.5H8.25l.75 1.5h7.5z" />
+                            <path
+                                d="M12 14.5c-1.19 0-2.28-.27-3.26-.81-.98-.54-1.8-1.28-2.46-2.22l-1.04.8c.66.94 1.48 1.68 2.46 2.22.98.54 2.07.81 3.26.81s2.28-.27 3.26-.81c.98-.54 1.8-1.28 2.46-2.22l-1.04-.8c-.55.8-1.25 1.42-2.11 1.85-.86.43-1.83.65-2.88.65z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition duration-200">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12.315 2c2.43 0 2.7.018 3.66.052.96.035 1.61.18 2.23.42.61.24 1.15.58 1.64 1.07.49.49.83 1.03 1.07 1.64.24.62.38 1.27.42 2.23.034.96.052 1.23.052 3.66s-.018 2.7-.052 3.66c-.035.96-.18 1.61-.42 2.23-.24.61-.58 1.15-1.07 1.64-.49.49-1.03.83-1.64 1.07-.62.24-1.27.38-2.23.42-.96.034-1.23.052-3.66.052s-2.7-.018-3.66-.052c-.96-.035-1.61-.18-2.23-.42-.61-.24-1.15-.58-1.64-1.07-.49-.49-.83-1.03-1.07-1.64-.24-.62-.38-1.27-.42-2.23-.034-.96-.052-1.23-.052-3.66s.018-2.7.052-3.66c.035-.96.18-1.61.42-2.23.24-.61.58-1.15 1.07-1.64.49-.49 1.03-.83 1.64-1.07.62-.24 1.27-.38 2.23-.42.96-.034 1.23-.052 3.66-.052zm0-2c-2.7 0-3.04.01-4.12.05-.72.03-1.23.16-1.74.34-.51.18-.94.43-1.33.82-.39.39-.64.82-.82 1.33-.18.51-.31 1.02-.34 1.74-.04 1.08-.05 1.42-.05 4.12s.01 3.04.05 4.12c.03.72.16 1.23.34 1.74.18.51.43.94.82 1.33.39.39.82.64 1.33.82.51.18 1.02.31 1.74.34 1.08.04 1.42.05 4.12.05s3.04-.01 4.12-.05c.72-.03 1.23-.16 1.74-.34.51-.18.94-.43 1.33-.82.39-.39.64-.82.82-1.33.18-.51.31-1.02.34-1.74.04-1.08.05-1.42.05-4.12s-.01-3.04-.05-4.12c-.03-.72-.16-1.23-.34-1.74-.18-.51-.43-.94-.82-1.33-.39-.39-.82-.64-1.33-.82-.51-.18-1.02-.31-1.74-.34-1.08-.04-1.42-.05-4.12-.05zm0 8.89c-2.14 0-3.89-1.75-3.89-3.89s1.75-3.89 3.89-3.89 3.89 1.75 3.89 3.89-1.75 3.89-3.89 3.89zm0-5.78c-1.04 0-1.89.85-1.89 1.89s.85 1.89 1.89 1.89 1.89-.85 1.89-1.89-.85-1.89-1.89-1.89zM19.5 8.13c-.5 0-.91-.41-.91-.91s.41-.91.91-.91.91.41.91.91-.41.91-.91.91z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+
+                <p class="mt-8 text-center text-base text-gray-400">
+                    &copy; 2025 CamTrip, Inc. All rights reserved.
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mainNavbar = document.getElementById('main-navbar');
+            const mobileDropdownTrigger = document.getElementById('mobile-dropdown-trigger');
+            const mobileDropdownContent = document.getElementById('mobile-dropdown-content');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+
+            // Ensure the scroll target exists for the top link
+            if (!document.getElementById('top-of-page')) {
+                const topDiv = document.createElement('div');
+                topDiv.id = 'top-of-page';
+                topDiv.style.position = 'absolute';
+                topDiv.style.top = '0';
+                topDiv.style.left = '0';
+                topDiv.style.visibility = 'hidden';
+                document.body.prepend(topDiv);
+            }
+            // --- 1. Hamburger Menu Toggle FIX ---
+            mobileMenuButton.addEventListener('click', () => {
+                // Toggle the 'hidden' class on the mobile menu
+                mobileMenu.classList.toggle('hidden');
+
+                // Check the current state after toggling (if 'hidden' exists, the menu is closed)
+                const isMenuClosed = mobileMenu.classList.contains('hidden');
+
+                // Toggle hamburger and close icons based on whether the menu is now closed
+                menuIconOpen.classList.toggle('hidden', !isMenuClosed); // Open icon is hidden if menu is NOT closed
+                menuIconClose.classList.toggle('hidden', isMenuClosed); // Close icon is hidden if menu IS closed
+
+                // Close mobile dropdown if main menu is closed
+                if (isMenuClosed) {
+                    mobileDropdownContent.classList.add('hidden');
+                    // Ensure arrow reset when the main menu closes
+                    const arrow = mobileDropdownTrigger.querySelector('.mobile-dropdown-arrow');
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Toggle mobile dropdown
+            mobileDropdownTrigger.addEventListener('click', () => {
+                mobileDropdownContent.classList.toggle('hidden');
+                const arrow = mobileDropdownTrigger.querySelector('.mobile-dropdown-arrow');
+                arrow.style.transform = mobileDropdownContent.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+                arrow.style.transition = 'transform 0.3s';
+            });
+
+
+
+            // --- 2. Navbar Background/Color Change on Scroll ---
+            const scrollThreshold = 50; // Pixels to scroll before change
+
+            const updateNavbarStyle = () => {
+                if (window.scrollY > scrollThreshold) {
+                    // Scrolled state: slightly darker background, shadow
+                    mainNavbar.classList.remove('bg-white', 'opacity-90');
+                    mainNavbar.classList.add('bg-slate-100', 'shadow-sm');
+                } else {
+                    // Top state: light background, no shadow
+                    mainNavbar.classList.remove('bg-slate-100', 'shadow-sm');
+                    mainNavbar.classList.add('bg-white', 'opacity-90');
+                }
+            };
+
+            window.addEventListener('scroll', updateNavbarStyle);
+            // Initialize style on load
+            updateNavbarStyle();
+
+
+            // --- 3. Smooth Scroll when clicking navigation links ---
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    // Prevent default anchor click behavior
+                    e.preventDefault();
+
+                    // Get the target section ID from the href
+                    let targetId = this.getAttribute('href');
+
+                    // Correct target for home link if it points to '#'
+                    if (targetId === '#') {
+                        targetId = '#top-of-page';
+                    }
+
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Scroll smoothly to the target element
+                        window.scrollTo({
+                            top: targetElement.offsetTop - mainNavbar.offsetHeight, // Offset by navbar height
+                            behavior: 'smooth'
+                        });
+
+                        // Close the mobile menu after clicking a link
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            menuIconOpen.classList.remove('hidden');
+                            menuIconClose.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+
+            // Also apply smooth scroll to the logo/home link
+            document.getElementById('home-link').addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('[id^="t-slide"]');
+            const dots = document.querySelectorAll('.absolute.bottom-4 a');
+            let currentSlide = 0;
+            let slideInterval;
+
+            function updateSlideDisplay(index) {
+                // 1. Update the opacity for the slides
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.remove('opacity-0');
+                        slide.classList.add('opacity-100');
+                    } else {
+                        slide.classList.remove('opacity-100');
+                        slide.classList.add('opacity-0');
+                    }
+                });
+
+                // 2. Update the background/state for the dots
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add('bg-indigo-600', 'opacity-100'); // Active state color
+                        dot.classList.remove('bg-gray-900', 'opacity-70'); // Inactive state color
+                    } else {
+                        dot.classList.add('bg-gray-900', 'opacity-70'); // Inactive state color
+                        dot.classList.remove('bg-indigo-600', 'opacity-100'); // Active state color
+                    }
+                });
+
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                const next = (currentSlide + 1) % slides.length;
+                updateSlideDisplay(next);
+            }
+
+            function startCarousel() {
+                // Clear any existing interval to prevent duplicates
+                if (slideInterval) clearInterval(slideInterval);
+                // Set the interval to automatically change slides every 5 seconds (5000ms)
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            // Initialize the first slide and start the auto-rotation
+            updateSlideDisplay(0);
+            startCarousel();
+
+            // Add event listeners for the navigation dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', (e) => {
+                    e.preventDefault(); // Stop the default anchor link behavior
+                    updateSlideDisplay(index);
+                    // Reset the auto-timer on manual click
+                    startCarousel();
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>
