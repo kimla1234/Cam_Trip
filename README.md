@@ -15,10 +15,10 @@ _(Replace the URL with your actual GitHub Pages link.)_
 
 ## 🖼 Screenshots
 
-**Desktop:** `./screenshots/Desktop.png`  
-**Mobile:** `./screenshots/mobile.png`
+![Project Management Interface](./image/Desktop.png)
+![Project Manager App on Smartphone](./image/mobile.png)
 
-> Place screenshots in the `screenshots/` folder with these filenames, or update the paths below.
+> Place screenshots in the `image/` folder with these filenames, or update the paths below.
 
 ---
 
